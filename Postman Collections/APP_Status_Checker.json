@@ -1,0 +1,43 @@
+{
+  "info": {
+    "_postman_id": "5df8efc7-e4db-4230-a8ed-31ef3de9e5bc",
+    "name": "App Status Checker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "status",
+      "_postman_id": "36218123-2599-4406-95f8-1ce25a86c8ca",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{url}}/status"
+      },
+      "response": [
+        {
+          "id": "b7cb0916-c40d-4179-93e7-2fa9a3c6d4da",
+          "name": "Default",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{url}}/status"
+          },
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "Response OK"
+        }
+      ]
+    }
+  ]
+}
