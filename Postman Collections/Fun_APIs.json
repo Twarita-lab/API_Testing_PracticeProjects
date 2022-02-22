@@ -1,0 +1,340 @@
+{
+  "info": {
+    "_postman_id": "3e2389b5-45f1-4ea0-8fec-705b1f3f44d0",
+    "name": "Fun API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Genius",
+      "item": [
+        {
+          "name": "POST annotations",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "be58df41-f6b1-4ba7-98d3-46f0ed368122",
+                "exec": [
+                  "var jsonData = pm.response.json();\r",
+                  "pm.environment.set(\"id\", jsonData.response.referent.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "430cb603-afa4-4187-b8ea-7d052fe7692c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "DHNtB7Ct3pgRBhxRBW2l-iaH32LBKtHfsJlIyFto5eeRLxywF0njAlkIRHOLdSSw"
+              }
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"annotation\": {\r\n    \"body\": {\r\n      \"markdown\": \"hello **world!**\"\r\n    }\r\n  },\r\n  \"referent\": {\r\n    \"raw_annotatable_url\": \"http://seejohncode.com/2014/01/27/vim-commands-piping/\",\r\n    \"fragment\": \"execute commands\",\r\n    \"context_for_display\": {\r\n      \"before_html\": \"You may know that you can \",\r\n      \"after_html\": \" from inside of vim, with a vim command:\"\r\n    }\r\n  },\r\n  \"web_page\": {\r\n    \"canonical_url\": null,\r\n    \"og_url\": null,\r\n    \"title\": \"Secret of Mana\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://api.genius.com/annotations"
+          },
+          "response": []
+        },
+        {
+          "name": "Annotation",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "6741022a-77dd-44d3-abcc-501a62af7f3d",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "c5445931-4905-46ec-bb7f-60f62ed852de",
+                "exec": [
+                  "\r",
+                  "let pathID = pm.request.toJSON().url.path[1];\r",
+                  "pm.test(\"Requested ID is present\", function(){\r",
+                  "    pm.expect(pm.response.text()).to.include(pathID);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "ec62aa04-d375-4fef-b730-7edf3f2e5f4d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "DHNtB7Ct3pgRBhxRBW2l-iaH32LBKtHfsJlIyFto5eeRLxywF0njAlkIRHOLdSSw"
+              }
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.genius.com/annotations/:id",
+              "protocol": "https",
+              "host": [
+                "api",
+                "genius",
+                "com"
+              ],
+              "path": [
+                "annotations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{id}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT upvote",
+          "_postman_id": "4c285bd2-8ccb-4d32-91a5-ac7e0f59f613",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "DHNtB7Ct3pgRBhxRBW2l-iaH32LBKtHfsJlIyFto5eeRLxywF0njAlkIRHOLdSSw"
+              }
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [],
+              "options": {
+                "formdata": {}
+              }
+            },
+            "url": {
+              "raw": "https://api.genius.com/annotations/:id/upvote",
+              "protocol": "https",
+              "host": [
+                "api",
+                "genius",
+                "com"
+              ],
+              "path": [
+                "annotations",
+                ":id",
+                "upvote"
+              ],
+              "variable": [
+                {
+                  "id": "6aa1281e-2e0d-452c-8015-bd0dd989a086",
+                  "key": "id",
+                  "value": "{{id}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e734a17b-987f-44c1-b006-af029a979723",
+                "exec": [
+                  "pm.test(\"Verify Not Authorized\", function(){\r",
+                  "    pm.response.status.match(403)\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "3caec75e-9883-401e-bf83-1992b9612ce3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "DHNtB7Ct3pgRBhxRBW2l-iaH32LBKtHfsJlIyFto5eeRLxywF0njAlkIRHOLdSSw"
+              }
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [],
+              "options": {
+                "formdata": {}
+              }
+            },
+            "url": {
+              "raw": "https://api.genius.com/annotations/:id",
+              "protocol": "https",
+              "host": [
+                "api",
+                "genius",
+                "com"
+              ],
+              "path": [
+                "annotations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{id}}",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "708e6725-d405-480b-bd66-2b964f308bb3"
+    },
+    {
+      "name": "Quote",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "26c20a6e-50c4-4f65-a5d8-942ca879c41f",
+            "exec": [
+              "pm.test(\"Body matches string\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"I\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response time is less than 100ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "bf7aeef7-4dd6-4d60-aa7f-57242dbc14af",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://api.kanye.rest"
+      },
+      "response": []
+    },
+    {
+      "name": "Activity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "67dc3af2-90cc-4eb3-8fbf-5a0c19b597e1",
+            "exec": [
+              "pm.test(\"Status code 200\", function(){\r",
+              "    pm.response.status.match(200)\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "8795fad1-9e31-4a2f-abf5-95b819c7a581",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://www.boredapi.com/api/activity"
+      },
+      "response": []
+    },
+    {
+      "name": "Translate",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "5c3090f8-ad65-4fe5-ac40-a402206a1d72",
+            "exec": [
+              "pm.request.addQueryParams(\"text\", \"I\");"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "2e92a224-73eb-4e94-a353-8203b05e7946",
+            "exec": [
+              "let requestedText = pm.request.toJSON().url.query[1]\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "c0576763-f468-4a66-92b6-ebbb65719fdb",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.funtranslations.com/translate/valyrian.json?text=I",
+          "protocol": "https",
+          "host": [
+            "api",
+            "funtranslations",
+            "com"
+          ],
+          "path": [
+            "translate",
+            "valyrian.json"
+          ],
+          "query": [
+            {
+              "key": "text",
+              "value": "I"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
