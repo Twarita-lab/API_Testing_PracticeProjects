@@ -1,0 +1,670 @@
+{
+  "info": {
+    "_postman_id": "c36b6198-ec6b-42ec-80a6-1b073a729659",
+    "name": "r/SpaceX API V4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Capsules",
+      "item": [
+        {
+          "name": "Get all capsules",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "ea270f87-22ff-42e9-8e19-180d6c64eddd",
+                "exec": [
+                  "//Status of Capsules API\r",
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "//Verify Total number of records are more than 0\r",
+                  "var responseData = pm.response.json();\r",
+                  "pm.test(\"Your test name\", function () {\r",
+                  "    pm.expect(responseData.length).to.greaterThan(0)\r",
+                  "});\r",
+                  "console.log(\"Total number of records are: \"+\r",
+                  "responseData.length)\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 5 min\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(300000);\r",
+                  "});\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "130cd756-eb20-4e2d-a9f4-8d7c8ebfd2db",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{URL}}/v4/capsules"
+          },
+          "response": [
+            {
+              "id": "58210b12-10a4-4434-97f1-7efc0b4205e5",
+              "name": "Get all capsules",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.spacexdata.com/v4/capsules"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Expose-Headers",
+                  "value": "spacex-api-cache,spacex-api-response-time"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=300"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 18 Feb 2022 10:01:24 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "\"1757-C2b9ioJVl8p1lhZHf+XG/11tLGw\""
+                },
+                {
+                  "key": "Expect-Ct",
+                  "value": "max-age=0"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Server",
+                  "value": "Caddy"
+                },
+                {
+                  "key": "Spacex-Api-Cache",
+                  "value": "HIT"
+                },
+                {
+                  "key": "Spacex-Api-Cache-Online",
+                  "value": "true"
+                },
+                {
+                  "key": "Spacex-Api-Response-Time",
+                  "value": "0ms"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Dns-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-Xss-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1367"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Hanging in atrium at SpaceX HQ in Hawthorne \",\n        \"launches\": [\n            \"5eb87cdeffd86e000604b330\"\n        ],\n        \"serial\": \"C101\",\n        \"status\": \"retired\",\n        \"type\": \"Dragon 1.0\",\n        \"id\": \"5e9e2c5bf35918ed873b2664\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"On display at KSC Visitor's Center \",\n        \"launches\": [\n            \"5eb87cdfffd86e000604b331\"\n        ],\n        \"serial\": \"C102\",\n        \"status\": \"retired\",\n        \"type\": \"Dragon 1.0\",\n        \"id\": \"5e9e2c5bf3591882af3b2665\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87ce0ffd86e000604b332\"\n        ],\n        \"serial\": \"C103\",\n        \"status\": \"unknown\",\n        \"type\": \"Dragon 1.0\",\n        \"id\": \"5e9e2c5bf3591835983b2666\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87ce1ffd86e000604b333\"\n        ],\n        \"serial\": \"C104\",\n        \"status\": \"unknown\",\n        \"type\": \"Dragon 1.0\",\n        \"id\": \"5e9e2c5bf359189ef23b2667\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87ce4ffd86e000604b337\"\n        ],\n        \"serial\": \"C105\",\n        \"status\": \"unknown\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5bf3591859a63b2668\"\n    },\n    {\n        \"reuse_count\": 2,\n        \"water_landings\": 3,\n        \"land_landings\": 0,\n        \"last_update\": \"As of January 8, 2020: Arrived at Port of LA after splashdown following CRS-19 mission\",\n        \"launches\": [\n            \"5eb87ce7ffd86e000604b33b\",\n            \"5eb87d03ffd86e000604b352\",\n            \"5eb87d39ffd86e000604b37e\"\n        ],\n        \"serial\": \"C106\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5bf3591880643b2669\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87ce8ffd86e000604b33c\"\n        ],\n        \"serial\": \"C107\",\n        \"status\": \"unknown\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5bf35918165f3b266a\"\n    },\n    {\n        \"reuse_count\": 2,\n        \"water_landings\": 3,\n        \"land_landings\": 0,\n        \"last_update\": \"As of August 29, 2019: Arrived at Port of LA after splashdown following CRS-18 mission\",\n        \"launches\": [\n            \"5eb87cecffd86e000604b33f\",\n            \"5eb87d0effd86e000604b35c\",\n            \"5eb87d36ffd86e000604b37b\"\n        ],\n        \"serial\": \"C108\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf359188bfb3b266b\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Destroyed on impact after F9 launch failure\",\n        \"launches\": [\n            \"5eb87ceeffd86e000604b341\"\n        ],\n        \"serial\": \"C109\",\n        \"status\": \"destroyed\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf35918407d3b266c\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 2,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87cf3ffd86e000604b345\",\n            \"5eb87d16ffd86e000604b364\"\n        ],\n        \"serial\": \"C110\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf3591885d43b266d\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 2,\n        \"land_landings\": 0,\n        \"last_update\": \"Location and status unknown\",\n        \"launches\": [\n            \"5eb87cf9ffd86e000604b349\",\n            \"5eb87d1cffd86e000604b369\"\n        ],\n        \"serial\": \"C111\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf359183bb73b266e\"\n    },\n    {\n        \"reuse_count\": 2,\n        \"water_landings\": 3,\n        \"land_landings\": 0,\n        \"last_update\": \"As of March 9, 2020: At the ISS during CRS-20 mission\",\n        \"launches\": [\n            \"5eb87cfeffd86e000604b34d\",\n            \"5eb87d26ffd86e000604b371\",\n            \"5eb87d42ffd86e000604b384\"\n        ],\n        \"serial\": \"C112\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf359185d753b266f\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 2,\n        \"land_landings\": 0,\n        \"last_update\": \"As of June 3, 2019: Successfully splashed down south of California\",\n        \"launches\": [\n            \"5eb87d07ffd86e000604b356\",\n            \"5eb87d2effd86e000604b377\"\n        ],\n        \"serial\": \"C113\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 1.1\",\n        \"id\": \"5e9e2c5cf3591869b63b2670\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"As of January 28, 2017: In Hawthorne, on display for Hyperloop competition. \",\n        \"launches\": [\n            \"5eb87d2bffd86e000604b375\"\n        ],\n        \"serial\": \"C201\",\n        \"status\": \"retired\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df35918b1063b2671\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"In Cape Canaveral, FL as of January 19, 2020. \\\"Successfully performed the IFA test.\\\" \",\n        \"launches\": [\n            \"5eb87d3dffd86e000604b381\"\n        ],\n        \"serial\": \"C205\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df359184c9a3b2672\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 0,\n        \"land_landings\": 0,\n        \"last_update\": \"In Hawthorne, CA as of July 24, 2017. Structural testing complete. \",\n        \"launches\": [],\n        \"serial\": \"C202\",\n        \"status\": \"retired\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df3591849f93b2673\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 0,\n        \"land_landings\": 0,\n        \"last_update\": \"Still used for development testing as of 2020 in Hawthorne, CA. \",\n        \"launches\": [],\n        \"serial\": \"C203\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df359184b793b2674\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 0,\n        \"land_landings\": 0,\n        \"last_update\": \"Destroyed in a test anomaly at LZ-1 on April 20, 2019. \",\n        \"launches\": [],\n        \"serial\": \"C204\",\n        \"status\": \"destroyed\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df359185f973b2675\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 2,\n        \"land_landings\": 0,\n        \"last_update\": \"Docked to pressurized mating adapter PMA-3 on the Harmony module of the ISS on 2021 July 21\",\n        \"launches\": [\n            \"5eb87d46ffd86e000604b388\",\n            \"5fe3af58b3467846b324215f\"\n        ],\n        \"serial\": \"C206\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5e9e2c5df359188aba3b2676\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 2,\n        \"land_landings\": 0,\n        \"last_update\": \"Undergoing refurbishment in a Cape Canaveral Processing Facility\",\n        \"launches\": [\n            \"5eb87d4dffd86e000604b38e\",\n            \"607a37565a906a44023e0866\"\n        ],\n        \"serial\": \"C207\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5f6f99fddcfdf403df379709\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"Undergoing refurbishment in a Cape Canaveral Processing Facility\",\n        \"launches\": [\n            \"5eb87d4effd86e000604b391\"\n        ],\n        \"serial\": \"C208\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"5fbb0f8fec55b34eb9f35c14\"\n    },\n    {\n        \"reuse_count\": 1,\n        \"water_landings\": 1,\n        \"land_landings\": 0,\n        \"last_update\": \"C210, Endurance\",\n        \"launches\": [\n            \"5fe3af84b3467846b3242161\",\n            \"6161d2006db1a92bfba85356\"\n        ],\n        \"serial\": \"C209\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"60b803421f83cc1e59f1644d\"\n    },\n    {\n        \"reuse_count\": 0,\n        \"water_landings\": 0,\n        \"land_landings\": 0,\n        \"last_update\": null,\n        \"launches\": [\n            \"5fe3b15eb3467846b324216d\"\n        ],\n        \"serial\": \"C210\",\n        \"status\": \"active\",\n        \"type\": \"Dragon 2.0\",\n        \"id\": \"617c05591bad2c661a6e2909\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get one capsule",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2f1773ca-623c-4e72-9b50-1f7e2945b3f4",
+                "exec": [
+                  "pm.environment.set(\"capsuleID\", data.id);\r",
+                  "pm.environment.set(\"serial\", data.serial);\r",
+                  "pm.environment.set(\"status\", data.status);\r",
+                  "pm.environment.set(\"type\", data.type);\r",
+                  "pm.environment.set(\"reuse_count\", data.reuse_count);\r",
+                  "pm.environment.set(\"water_landings\", data.water_landings);\r",
+                  "pm.environment.set(\"land_landings\", data.land_landings);\r",
+                  "pm.environment.set(\"launches\", data.launches);\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "237a9189-240c-4b06-957d-8aaff5ecfe06",
+                "exec": [
+                  "var jsonData = pm.response.json();\r",
+                  "let capsule_ID = pm.environment.get('capsuleID');\r",
+                  "let serial_no = pm.environment.get('serial');\r",
+                  "let capsule_status = pm.environment.get('status');\r",
+                  "let capsule_type = pm.environment.get('type');\r",
+                  "let capsule_reuse_count = pm.environment.get(\"reuse_count\");\r",
+                  "let capsule_water_landings = pm.environment.get(\"water_landings\");\r",
+                  "let capsule_land_landings = pm.environment.get(\"land_landings\");\r",
+                  "let capsule_launches = pm.environment.get(\"launches\");\r",
+                  "\r",
+                  "//Verify the requested ID is displayed in the result\r",
+                  "pm.test(\"Verify the requested ID is retrieved\", function () {\r",
+                  "    pm.expect(jsonData.id).to.eql(capsule_ID);\r",
+                  "});\r",
+                  "\r",
+                  "//Verify serial, status and type based on ID\r",
+                  "pm.test(\"Verify serial, status and type based on ID\", function () {\r",
+                  "        pm.expect(jsonData.serial).to.eql(serial_no);\r",
+                  "        pm.expect(jsonData.status).to.eql(capsule_status);\r",
+                  "        pm.expect(jsonData.type).to.eql(capsule_type);\r",
+                  "        pm.expect(jsonData.reuse_count).to.eql(capsule_reuse_count);\r",
+                  "        pm.expect(jsonData.water_landings).to.eql(capsule_water_landings);\r",
+                  "        pm.expect(jsonData.land_landings).to.eql(capsule_land_landings);\r",
+                  "        pm.expect(jsonData.launches).to.eql(capsule_launches);\r",
+                  "        \r",
+                  "    \r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 5 min\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(300000);\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "b8f77bf3-2127-47a6-a27f-722404439f3c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": "{{URL}}/v4/capsules/{{capsuleID}}"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "d0125f9d-7c13-4a3d-b788-6622829653ba"
+    },
+    {
+      "name": "Company Info",
+      "item": [
+        {
+          "name": "Get Company Info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "68c0e5c4-e46e-4eea-a408-0ec2cf978296",
+                "exec": [
+                  "pm.test(\"Validate City\", function () {\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.headquarters.city).to.eql(\"Hawthorne\");\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "ba9f5d2a-ca1e-42e7-aa5b-19bba43a7622",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": "{{URL}}/v4/company"
+          },
+          "response": [
+            {
+              "id": "ac6be0e0-7c2a-42ad-856a-1db2ebd373d0",
+              "name": "Get Company Info",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "https://api.spacexdata.com/v4/company"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Expose-Headers",
+                  "value": "spacex-api-cache,spacex-api-response-time"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=86400"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 22 Feb 2022 06:25:22 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "\"2ea-KLET10RDtc2RJI9HB4muV6SDyUU\""
+                },
+                {
+                  "key": "Expect-Ct",
+                  "value": "max-age=0"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Server",
+                  "value": "Caddy"
+                },
+                {
+                  "key": "Spacex-Api-Cache",
+                  "value": "HIT"
+                },
+                {
+                  "key": "Spacex-Api-Cache-Online",
+                  "value": "true"
+                },
+                {
+                  "key": "Spacex-Api-Response-Time",
+                  "value": "0ms"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Dns-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-Xss-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "443"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n    \"headquarters\": {\n        \"address\": \"Rocket Road\",\n        \"city\": \"Hawthorne\",\n        \"state\": \"California\"\n    },\n    \"links\": {\n        \"website\": \"https://www.spacex.com/\",\n        \"flickr\": \"https://www.flickr.com/photos/spacex/\",\n        \"twitter\": \"https://twitter.com/SpaceX\",\n        \"elon_twitter\": \"https://twitter.com/elonmusk\"\n    },\n    \"name\": \"SpaceX\",\n    \"founder\": \"Elon Musk\",\n    \"founded\": 2002,\n    \"employees\": 9500,\n    \"vehicles\": 4,\n    \"launch_sites\": 3,\n    \"test_sites\": 3,\n    \"ceo\": \"Elon Musk\",\n    \"cto\": \"Elon Musk\",\n    \"coo\": \"Gwynne Shotwell\",\n    \"cto_propulsion\": \"Tom Mueller\",\n    \"valuation\": 74000000000,\n    \"summary\": \"SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.\",\n    \"id\": \"5eb75edc42fea42237d7f3ed\"\n}"
+            }
+          ]
+        }
+      ],
+      "_postman_id": "583a893a-7f30-4826-a49c-9e8543bd5b1d"
+    },
+    {
+      "name": "Crew",
+      "item": [
+        {
+          "name": "Get all Crew",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b5012af5-bda2-4bbf-b1c2-8353cc4775e3",
+                "exec": [
+                  "pm.test(\"Number of  variables\", function(){\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    let countNASA = 0;\r",
+                  "    let countSpaceX = 0;\r",
+                  "    let countJAXA = 0;\r",
+                  "    let countESA = 0;\r",
+                  "    let countAxiomSpace = 0;\r",
+                  "        for(var i=0; i<jsonData.length; i++){\r",
+                  "            if(jsonData[i].agency==\"NASA\"){\r",
+                  "                countNASA = countNASA+1;\r",
+                  "            }\r",
+                  "            else if(jsonData[i].agency == \"SpaceX\"){\r",
+                  "                countSpaceX = countSpaceX+1;\r",
+                  "            }\r",
+                  "            else if(jsonData[i].agency==\"JAXA\"){\r",
+                  "                countJAXA = countJAXA+1;\r",
+                  "            }\r",
+                  "            else if(jsonData[i].agency == \"ESA\"){\r",
+                  "                countESA = countESA+1;\r",
+                  "            }\r",
+                  "            else if(jsonData[i].agency == \"Axiom Space\"){\r",
+                  "                countAxiomSpace = countAxiomSpace+1;\r",
+                  "            }\r",
+                  "            else{\r",
+                  "                console.log(\"The agency is \"+jsonData[i].agency);\r",
+                  "            }\r",
+                  "}\r",
+                  "pm.expect(countNASA).to.eql(10);\r",
+                  "pm.expect(countSpaceX).to.eql(4);\r",
+                  "pm.expect(countJAXA).to.eql(2);\r",
+                  "pm.expect(countESA).to.eql(2);\r",
+                  "pm.expect(countAxiomSpace).to.eql(4);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "37c95ac3-e093-4df5-b337-2617a7de0237",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{URL}}/v4/crew"
+          },
+          "response": [
+            {
+              "id": "37fbe8e5-6a42-415e-b505-96f2ef10aaa0",
+              "name": "Get all Crew",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": "{{URL}}/v4/crew"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Expose-Headers",
+                  "value": "spacex-api-cache,spacex-api-response-time"
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=300"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 22 Feb 2022 08:08:04 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "\"13cf-GobiyMjdDFn/ec0VQu/Y0TK74T8\""
+                },
+                {
+                  "key": "Expect-Ct",
+                  "value": "max-age=0"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Server",
+                  "value": "Caddy"
+                },
+                {
+                  "key": "Spacex-Api-Cache",
+                  "value": "HIT"
+                },
+                {
+                  "key": "Spacex-Api-Cache-Online",
+                  "value": "true"
+                },
+                {
+                  "key": "Spacex-Api-Response-Time",
+                  "value": "0ms"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Dns-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-Xss-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1101"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n    {\n        \"name\": \"Robert Behnken\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/0smMgMH.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Robert_L._Behnken\",\n        \"launches\": [\n            \"5eb87d46ffd86e000604b388\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5ebf1a6e23a9a60006e03a7a\"\n    },\n    {\n        \"name\": \"Douglas Hurley\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://i.imgur.com/ooaayWf.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Douglas_G._Hurley\",\n        \"launches\": [\n            \"5eb87d46ffd86e000604b388\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5ebf1b7323a9a60006e03a7b\"\n    },\n    {\n        \"name\": \"Shannon Walker\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/9z4tRIO.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Shannon_Walker\",\n        \"launches\": [\n            \"5eb87d4dffd86e000604b38e\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5f7f1543bf32c864a529b23e\"\n    },\n    {\n        \"name\": \"Soichi Noguchi\",\n        \"agency\": \"JAXA\",\n        \"image\": \"https://imgur.com/7B1jxl8.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Soichi_Noguchi\",\n        \"launches\": [\n            \"5eb87d4dffd86e000604b38e\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5f7f158bbf32c864a529b23f\"\n    },\n    {\n        \"name\": \"Victor J. Glover\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/Vv5Hgzh.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Victor_J._Glover\",\n        \"launches\": [\n            \"5eb87d4dffd86e000604b38e\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5f7f15d5bf32c864a529b240\"\n    },\n    {\n        \"name\": \"Michael S. Hopkins\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/Dfg8OJ2.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Michael_S._Hopkins\",\n        \"launches\": [\n            \"5eb87d4dffd86e000604b38e\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5f7f1614bf32c864a529b241\"\n    },\n    {\n        \"name\": \"Shane Kimbrough\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/nwxqtcT.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Shane_Kimbrough\",\n        \"launches\": [\n            \"5fe3af58b3467846b324215f\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3ba5fb3467846b3242188\"\n    },\n    {\n        \"name\": \"K. Megan McArthur\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/0VNXcdM.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/K._Megan_McArthur\",\n        \"launches\": [\n            \"5fe3af58b3467846b324215f\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3bb01b3467846b3242189\"\n    },\n    {\n        \"name\": \"Thomas Pesquet\",\n        \"agency\": \"ESA\",\n        \"image\": \"https://imgur.com/5iColcZ.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Thomas_Pesquet\",\n        \"launches\": [\n            \"5fe3af58b3467846b324215f\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3bc3db3467846b324218b\"\n    },\n    {\n        \"name\": \"Akihiko Hoshide\",\n        \"agency\": \"JAXA\",\n        \"image\": \"https://imgur.com/GefuPYs.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Akihiko_Hoshide\",\n        \"launches\": [\n            \"5fe3af58b3467846b324215f\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3bc8ab3467846b324218c\"\n    },\n    {\n        \"name\": \"Raja Chari\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/uKj6DOF.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Raja_Chari\",\n        \"launches\": [\n            \"5fe3b15eb3467846b324216d\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3c587b3467846b3242198\"\n    },\n    {\n        \"name\": \"Thomas Marshburn\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://imgur.com/9RmQJZw.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Thomas_Marshburn\",\n        \"launches\": [\n            \"5fe3b15eb3467846b324216d\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3c5beb3467846b3242199\"\n    },\n    {\n        \"name\": \"Matthias Maurer\",\n        \"agency\": \"ESA\",\n        \"image\": \"https://imgur.com/yBPw4mX.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Matthias_Maurer\",\n        \"launches\": [\n            \"5fe3b15eb3467846b324216d\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"5fe3c5f6b3467846b324219a\"\n    },\n    {\n        \"name\": \"Jared Isaacman\",\n        \"agency\": \"SpaceX\",\n        \"image\": \"https://imgur.com/BpdQrMv.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Jared_Isaacman\",\n        \"launches\": [\n            \"607a37565a906a44023e0866\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"607a3a5f5a906a44023e0870\"\n    },\n    {\n        \"name\": \"Hayley Arceneaux\",\n        \"agency\": \"SpaceX\",\n        \"image\": \"https://imgur.com/ll7TlwD.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Hayley_Arceneaux\",\n        \"launches\": [\n            \"607a37565a906a44023e0866\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"607a3ab45a906a44023e0872\"\n    },\n    {\n        \"name\": \"Sian Proctor\",\n        \"agency\": \"SpaceX\",\n        \"image\": \"https://imgur.com/gcnGDC6.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Sian_Proctor\",\n        \"launches\": [\n            \"607a37565a906a44023e0866\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"607b48375a906a44023e08b8\"\n    },\n    {\n        \"name\": \"Christopher Sembroski\",\n        \"agency\": \"SpaceX\",\n        \"image\": \"https://imgur.com/mC9naw6.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Christopher_Sembroski\",\n        \"launches\": [\n            \"607a37565a906a44023e0866\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"607b48da5a906a44023e08b9\"\n    },\n    {\n        \"name\": \"Kayla Barron\",\n        \"agency\": \"NASA\",\n        \"image\": \"https://i.imgur.com/2rXxSFw.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Kayla_Barron\",\n        \"launches\": [\n            \"5fe3b15eb3467846b324216d\"\n        ],\n        \"status\": \"active\",\n        \"id\": \"60c4b5ad4e041c0b356db393\"\n    },\n    {\n        \"name\": \"Michael López-Alegría\",\n        \"agency\": \"Axiom Space\",\n        \"image\": \"https://i.imgur.com/60YDzr6.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Michael_L%C3%B3pez-Alegr%C3%ADa\",\n        \"launches\": [],\n        \"status\": \"active\",\n        \"id\": \"61eefc9c9eb1064137a1bd77\"\n    },\n    {\n        \"name\": \"Larry Connor\",\n        \"agency\": \"Axiom Space\",\n        \"image\": \"https://i.imgur.com/BMJiQ3G.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Larry_Connor\",\n        \"launches\": [],\n        \"status\": \"active\",\n        \"id\": \"61eefcf89eb1064137a1bd79\"\n    },\n    {\n        \"name\": \"Mark Pathy\",\n        \"agency\": \"Axiom Space\",\n        \"image\": \"https://i.imgur.com/IFpgQpP.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Mark_Pathy\",\n        \"launches\": [],\n        \"status\": \"active\",\n        \"id\": \"61eefd5b9eb1064137a1bd7a\"\n    },\n    {\n        \"name\": \"Eytan Stibbe\",\n        \"agency\": \"Axiom Space\",\n        \"image\": \"https://i.imgur.com/96TBbFB.png\",\n        \"wikipedia\": \"https://en.wikipedia.org/wiki/Eytan_Stibbe\",\n        \"launches\": [],\n        \"status\": \"active\",\n        \"id\": \"61eefdbf9eb1064137a1bd7b\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get one Crew Member",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "32fa840e-5b94-48d9-a70c-0e4640a39de6",
+                "exec": [
+                  "pm.environment.set(\"id\", data.id);\r",
+                  "pm.environment.set(\"name\", data.name);\r",
+                  "pm.environment.set(\"agency\", data.agency);\r",
+                  "pm.environment.set(\"image\", data.image);\r",
+                  "pm.environment.set(\"wikipedia\", data.wikipedia);\r",
+                  "pm.environment.set(\"launches\", data.launches);\r",
+                  "pm.environment.set(\"status\", data.status);  "
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b1576eca-0098-45e8-9b1f-2f0fee2ccf83",
+                "exec": [
+                  "let name = pm.environment.get('name');\r",
+                  "let agency = pm.environment.get('agency');\r",
+                  "let image = pm.environment.get('image');\r",
+                  "let wikipedia = pm.environment.get('wikipedia');\r",
+                  "let status = pm.environment.get('status');  \r",
+                  "\r",
+                  "var jsonData = pm.response.json();\r",
+                  "pm.test(\"Verify data with resoect to id\", function(){\r",
+                  "    pm.expect(jsonData.name).to.eql(name);\r",
+                  "    pm.expect(jsonData.agency).to.eql(agency);\r",
+                  "    pm.expect(jsonData.image).to.eql(image);\r",
+                  "    pm.expect(jsonData.wikipedia).to.eql(wikipedia); \r",
+                  "    pm.expect(jsonData.status).to.eql(status);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "e1765883-a260-4720-9ff0-614994fe165d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": "{{URL}}/v4/crew/{{id}}"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "6a37ab02-6f1a-44f8-b712-d5d178fff6a9"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "6bae5570-3097-40d6-8c8d-2f580037390c",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "46d44759-56a3-4f57-a379-9ad72209c2c3",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
