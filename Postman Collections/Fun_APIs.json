@@ -23,7 +23,7 @@
               }
             }
           ],
-          "_postman_id": "430cb603-afa4-4187-b8ea-7d052fe7692c",
+          "id": "430cb603-afa4-4187-b8ea-7d052fe7692c",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -31,7 +31,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "DHNtB7Ct3pgRBhxRBW2l-iaH32LBKtHfsJlIyFto5eeRLxywF0njAlkIRHOLdSSw"
+                "token": "od8cLChx8VwLpoheuGQLuSHefFWGj63EPKNsMIsGf8JCzRMcq4VXXkZuAXB0LXVL"
               }
             },
             "method": "POST",
@@ -78,7 +78,7 @@
               }
             }
           ],
-          "_postman_id": "ec62aa04-d375-4fef-b730-7edf3f2e5f4d",
+          "id": "ec62aa04-d375-4fef-b730-7edf3f2e5f4d",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -106,8 +106,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "{{id}}",
-                  "type": "string"
+                  "value": "{{id}}"
                 }
               ]
             }
@@ -116,7 +115,7 @@
         },
         {
           "name": "PUT upvote",
-          "_postman_id": "4c285bd2-8ccb-4d32-91a5-ac7e0f59f613",
+          "id": "4c285bd2-8ccb-4d32-91a5-ac7e0f59f613",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -131,10 +130,7 @@
             "header": [],
             "body": {
               "mode": "formdata",
-              "formdata": [],
-              "options": {
-                "formdata": {}
-              }
+              "formdata": []
             },
             "url": {
               "raw": "https://api.genius.com/annotations/:id/upvote",
@@ -153,8 +149,7 @@
                 {
                   "id": "6aa1281e-2e0d-452c-8015-bd0dd989a086",
                   "key": "id",
-                  "value": "{{id}}",
-                  "type": "string"
+                  "value": "{{id}}"
                 }
               ]
             }
@@ -177,7 +172,7 @@
               }
             }
           ],
-          "_postman_id": "3caec75e-9883-401e-bf83-1992b9612ce3",
+          "id": "3caec75e-9883-401e-bf83-1992b9612ce3",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -192,10 +187,7 @@
             "header": [],
             "body": {
               "mode": "formdata",
-              "formdata": [],
-              "options": {
-                "formdata": {}
-              }
+              "formdata": []
             },
             "url": {
               "raw": "https://api.genius.com/annotations/:id",
@@ -212,8 +204,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "{{id}}",
-                  "type": "string"
+                  "value": "{{id}}"
                 }
               ]
             }
@@ -221,7 +212,7 @@
           "response": []
         }
       ],
-      "_postman_id": "708e6725-d405-480b-bd66-2b964f308bb3"
+      "id": "708e6725-d405-480b-bd66-2b964f308bb3"
     },
     {
       "name": "Quote",
@@ -243,7 +234,7 @@
           }
         }
       ],
-      "_postman_id": "bf7aeef7-4dd6-4d60-aa7f-57242dbc14af",
+      "id": "bf7aeef7-4dd6-4d60-aa7f-57242dbc14af",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -270,7 +261,7 @@
           }
         }
       ],
-      "_postman_id": "8795fad1-9e31-4a2f-abf5-95b819c7a581",
+      "id": "8795fad1-9e31-4a2f-abf5-95b819c7a581",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -307,7 +298,7 @@
           }
         }
       ],
-      "_postman_id": "c0576763-f468-4a66-92b6-ebbb65719fdb",
+      "id": "c0576763-f468-4a66-92b6-ebbb65719fdb",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
